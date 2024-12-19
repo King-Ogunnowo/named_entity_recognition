@@ -15,6 +15,7 @@ from sentence_transformers import SentenceTransformer
 from IPython.core.display import display, HTML
 from IPython.display import Markdown
 
+one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
 model_path = Path("en_core_web_sm")
 nlp = spacy.util.load_model_from_path(model_path)
 
