@@ -24,6 +24,8 @@ def list_folders(directory):
             folders.append(os.path.join(root, dir_name))
     return folders
 
+base_dir = os.getcwd()
+
 for folder in list_folders(base_dir):
     print(folder)
 
@@ -31,8 +33,6 @@ one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
 print("Done")
 model_path = Path("en_core_web_sm")
 nlp = spacy.util.load_model_from_path(model_path)
-
-base_dir = os.getcwd()
 
 def load_artifacts():
     one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
