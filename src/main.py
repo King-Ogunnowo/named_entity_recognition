@@ -16,7 +16,7 @@ from IPython.core.display import display, HTML
 from IPython.display import Markdown
 
 model_path = Path("../models/en_core_web_sm/")
-nlp = spacy.load(model_path)
+nlp = spacy.util.load_model_from_path(model_path)
 
 def load_artifacts():
     one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
