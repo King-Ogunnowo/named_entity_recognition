@@ -1,9 +1,6 @@
 import streamlit as st
 from main import main
 
-from IPython.core.display import display, HTML
-from IPython.display import Markdown
-
 def markdown_highlight_with_labels(text, tags):
     """
     Highlights text using BIO tags and displays the entity label alongside the token.
