@@ -17,7 +17,7 @@ from sentence_transformers import SentenceTransformer
 from IPython.core.display import display, HTML
 from IPython.display import Markdown
 
-model_path = Path("/workspaces/named_entity_recognition/models/en_core_web_sm")
+model_path = Path("../named_entity_recognition/models/en_core_web_sm")
 nlp = spacy.util.load_model_from_path(model_path)
 
 def load_artifacts():
