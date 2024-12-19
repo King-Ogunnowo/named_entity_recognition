@@ -7,6 +7,7 @@ import numpy as np
 import contractions
 
 from spacy.tokens import Span
+from pathlib import Path
 from spacy import displacy
 from tensorflow.keras.models import load_model
 from sentence_transformers import SentenceTransformer
@@ -14,7 +15,8 @@ from sentence_transformers import SentenceTransformer
 from IPython.core.display import display, HTML
 from IPython.display import Markdown
 
-nlp = spacy.load("../models/en_core_web_sm/")
+model_path = Path("../models/en_core_web_sm/")
+nlp = spacy.load(model_path)
 
 def load_artifacts():
     one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
