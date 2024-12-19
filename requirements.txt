@@ -5,3 +5,4 @@ tensorflow==2.13.0-rc0
 spacy
 contractions
 numpy==1.26.4
+ipython
