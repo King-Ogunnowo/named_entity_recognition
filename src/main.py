@@ -17,22 +17,7 @@ from sentence_transformers import SentenceTransformer
 from IPython.core.display import display, HTML
 from IPython.display import Markdown
 
-# List all folders in the base directory
-def list_folders(directory):
-    folders = []
-    for root, dirs, files in os.walk(directory):
-        for dir_name in dirs:
-            folders.append(os.path.join(root, dir_name))
-    return folders
-
-base_dir = os.getcwd()
-
-for folder in list_folders(base_dir):
-    st.write(folder)
-
-one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
-print("Done")
-model_path = Path("en_core_web_sm")
+model_path = Path("/workspaces/named_entity_recognition/models/en_core_web_sm")
 nlp = spacy.util.load_model_from_path(model_path)
 
 def load_artifacts():
