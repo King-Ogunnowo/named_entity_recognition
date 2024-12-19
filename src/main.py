@@ -27,7 +27,7 @@ def list_folders(directory):
 base_dir = os.getcwd()
 
 for folder in list_folders(base_dir):
-    print(folder)
+    st.write(folder)
 
 one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
 print("Done")
