@@ -1,3 +1,4 @@
 nltk==3.8.1
 sentence_transformers==3.3.1
-scikit-le
+scikit-learn==1.5.1
+tensorflow==2.13.0-rc0
