@@ -17,13 +17,13 @@ from sentence_transformers import SentenceTransformer
 from IPython.core.display import display, HTML
 from IPython.display import Markdown
 
-model_path = Path("../named_entity_recognition/models/en_core_web_sm")
+model_path = Path("../named_entity_recognition/models/en_core_web_sm/en_core_web_sm-3.8.0")
 nlp = spacy.util.load_model_from_path(model_path)
 
 def load_artifacts():
-    one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
-    NER_model = load_model('../models/NER_tensorflow_3_input_model/')
-    label_encoder = pickle.load(open("../models/label_encoder.pkl", 'rb'))
+    one_hot_encoder = pickle.load(open("../named_entity_recognition//models/one_hot_encoder.pkl", 'rb'))
+    NER_model = load_model('../named_entity_recognition/models/NER_tensorflow_3_input_model/')
+    label_encoder = pickle.load(open("../named_entity_recognition/models/label_encoder.pkl", 'rb'))
     embedding_model = SentenceTransformer("intfloat/multilingual-e5-base")
     return one_hot_encoder, NER_model, embedding_model, label_encoder
 
