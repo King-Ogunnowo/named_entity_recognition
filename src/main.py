@@ -14,12 +14,7 @@ from sentence_transformers import SentenceTransformer
 from IPython.core.display import display, HTML
 from IPython.display import Markdown
 
-warnings.filterwarnings('ignore')
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("models/en_core_web_sm")
 
 def load_artifacts():
     one_hot_encoder = pickle.load(open("../models/one_hot_encoder.pkl", 'rb'))
