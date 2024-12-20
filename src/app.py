@@ -44,8 +44,8 @@ user_input = st.text_area("Enter text here", "Elon Musk founded SpaceX in 2002."
 if st.button("Analyze"):
     with st.spinner("Processing..."):
         cleaned_text, prediction = main(user_input)
-    if len(np.unique(test_pred)) == 1:
-        if np.unique(test_pred) == 'O':
+    if len(np.unique(prediction)) == 1:
+        if np.unique(prediction) == 'O':
             st.markdown(markdown_highlight_with_labels(cleaned_text, prediction), unsafe_allow_html=True)
             st.write("*** Sorry, I could not see any Named Entity in your input ***")
     else:
