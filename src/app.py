@@ -1,7 +1,7 @@
 import streamlit as st
 from main import main
 
-import numpy
+import numpy as np
 
 def markdown_highlight_with_labels(text, tags):
     """
