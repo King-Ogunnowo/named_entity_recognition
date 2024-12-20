@@ -1,6 +1,8 @@
 import streamlit as st
 from main import main
 
+import numpy
+
 def markdown_highlight_with_labels(text, tags):
     """
     Highlights text using BIO tags and displays the entity label alongside the token.
@@ -42,5 +44,10 @@ user_input = st.text_area("Enter text here", "Elon Musk founded SpaceX in 2002."
 if st.button("Analyze"):
     with st.spinner("Processing..."):
         cleaned_text, prediction = main(user_input)
+    if len(np.unique(test_pred)) == 1:
+        if np.unique(test_pred) == 'O':
+            st.markdown(markdown_highlight_with_labels(cleaned_text, prediction), unsafe_allow_html=True)
+            st.write("*** Sorry, I could not see any Named Entity in your input ***")
+    else:
         st.markdown(markdown_highlight_with_labels(cleaned_text, prediction), unsafe_allow_html=True)
 
